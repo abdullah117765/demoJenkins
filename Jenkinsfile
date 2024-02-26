@@ -37,8 +37,8 @@ pipeline {
         stage('Parameters') {
             steps {
                 echo 'deploy on test'
-                echo "${params.name}"
                 echo "${params.person}"
+                echo "${params.isMale}"
             }
         }
         
