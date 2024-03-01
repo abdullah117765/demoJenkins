@@ -5,24 +5,24 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Starting the build process...'
-                // Add build commands here
-                sh 'npm install' // Example build command
+                // Windows equivalent build commands
+                bat 'npm install' // Example build command for Windows
                 echo 'Build successful!'
             }
         }
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                // Add test commands here
-                sh 'npm test' // Example test command
+                // Windows equivalent test commands
+                bat 'npm test' // Example test command for Windows
                 echo 'Tests passed!'
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying the application...'
-                // Add deploy commands here
-                sh 'npm run deploy' // Example deploy command
+                // Windows equivalent deploy commands
+                bat 'npm run deploy' // Example deploy command for Windows
                 echo 'Deployment successful!'
             }
         }
