@@ -11,14 +11,14 @@ pipeline {
 
         stage('Installation of dependencies') {
             steps {
-                sh 'pip3 install -r requirement.txt'
+                bat 'pip3 install -r requirement.txt'
                 echo 'Dependencies successfully installed!'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'pytest test.py'
+                bat 'pytest test.py'
                 echo 'Tests passed!'
             }
         }
