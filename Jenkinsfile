@@ -2,28 +2,38 @@ pipeline {
     agent any
     
     stages {
-        stage('Build') {
+
+        stage('Cloning from git') {
             steps {
-                echo 'Starting the build process...'
-                // Windows equivalent build commands
-                
-                echo 'Build successful!'
+                git branch: 'main', url: 'https://github.com/abdullah117765/demoJenkins'
             }
         }
+
+        stage('Installation of dependencies') {
+            steps {
+                sh 'pip3 install -r requirement.txt'
+                echo 'Dependencies successfully installed!'
+            }
+        }
+
         stage('Test') {
             steps {
-                echo 'Running tests...'
-                // Windows equivalent test commands
-                
+                sh 'pytest test.py'
                 echo 'Tests passed!'
             }
         }
+
         stage('Deploy') {
             steps {
-                echo 'Deploying the application...'
-                // Windows equivalent deploy commands
-               
-                echo 'Deployment successful!'
+                script {
+                    if (env.BRANCH_NAME == 'main') {
+                        echo 'Deploying to production...'
+                        
+                    } else {
+                        echo 'Deploying to development server...'
+                        
+                    }
+                }
             }
         }
     }
