@@ -17,3 +17,4 @@ class mlops:
 mlopsObj = mlops(5)
 print(mlopsObj.getTotalStudents())
 print(mlopsObj.getClassName())
+print('hello world')
