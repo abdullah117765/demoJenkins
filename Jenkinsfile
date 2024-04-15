@@ -1,7 +1,7 @@
 pipeline {
       
     environment {
-        deployedLink= '3.7.253.96:81'
+        deployedLink = '3.7.253.96:81'
     }
     
     agent any
