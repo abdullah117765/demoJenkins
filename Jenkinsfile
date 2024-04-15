@@ -10,7 +10,7 @@ pipeline {
 
         stage('Cloning from git') {
             steps {
-                git branch: 'main', url: 'https://github.com/abdullah117765/demoJenkins'
+                git branch: 'main', url: "https://github.com/abdullah117765/${env.JOB_NAME}"
             }
         }
 
