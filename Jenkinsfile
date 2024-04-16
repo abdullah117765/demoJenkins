@@ -33,6 +33,7 @@ pipeline {
                 script {
                     if (env.BRANCH_NAME == 'main') {
                         echo 'Deploying to production...'
+                        writeFile file: 'deployment_link.txt', text: "${env.deployedLink}"
                         
                     } else {
                         echo 'Deploying to development server...'
