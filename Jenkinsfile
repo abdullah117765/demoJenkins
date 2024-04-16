@@ -33,7 +33,8 @@ pipeline {
                 script {
                     if (env.BRANCH_NAME == 'main') {
                         echo 'Deploying to production...'
-                        writeFile file: "${WORKSPACE}/deployment_link.txt", text: "${env.deployedLink}"
+                        bat "type nul > ${WORKSPACE}\\deployment_link.txt"  // Create the file if it doesn't exist
+                        writeFile file: "${WORKSPACE}\\deployment_link.txt", text: "${env.deployedLink}"
                         
                     } else {
                         echo 'Deploying to development server...'
