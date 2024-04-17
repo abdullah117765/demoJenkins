@@ -41,6 +41,8 @@ pipeline {
                         
                     } else {
                         echo 'Deploying to development server...'
+                        env.deployedLink = '3.7.253.96:81'
+                        echo "Deployed Link: ${env.deployedLink}"
                     }
                 }
             }
