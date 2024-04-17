@@ -37,6 +37,7 @@ pipeline {
                     if (env.BRANCH_NAME == 'main') {
                         echo 'Deploying to production...'
                         env.deployedLink = '3.7.253.96:81'
+                        deployedLink="34.5534.33"
                         echo "Deployed Link: ${env.deployedLink}"
                         
                     } else {
