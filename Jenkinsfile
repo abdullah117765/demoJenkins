@@ -6,8 +6,11 @@ pipeline {
     
     agent any
     
+    parameters {
+        string(defaultValue: '', description: 'Deployed Link', name: 'deployedLink')
+    }
+    
     stages {
-
         stage('Cloning from git') {
             steps {
                 git branch: 'main', url: "https://github.com/abdullah117765/${env.JOB_NAME}"
@@ -37,7 +40,6 @@ pipeline {
                         
                     } else {
                         echo 'Deploying to development server...'
-                        
                     }
                 }
             }
