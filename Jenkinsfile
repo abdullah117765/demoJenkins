@@ -35,7 +35,7 @@ pipeline {
             steps {
                 script {
                       echo 'Deploying to production...'
-                      params.deployedLink = '3.7.253.96:81'
+                      deployedLink = '3.7.253.96:81'
                       echo "deployedLink: ${env.deployedLink}"
                       echo "pvalue: ${deployedLink}"
                       echo "Current environment variables: ${env}" // Debug statement
