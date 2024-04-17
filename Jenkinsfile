@@ -1,8 +1,6 @@
 pipeline {
       
-    // environment {
-    //     // deployedLink = '0.0.0'
-    // }
+    
     
     agent any
     
@@ -36,7 +34,8 @@ pipeline {
                 script {
                       echo 'Deploying to production...'
                       env.deployedLink = '3.7.253.96:81'
-                      echo "Deployed Link: ${env.deployedLink}"
+                      echo "deployedLink: ${env.deployedLink}"
+                      echo "param_value: ${env.param_value}"
                       echo "Current environment variables: ${env}" // Debug statement
   
                 }
