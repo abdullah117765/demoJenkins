@@ -6,9 +6,7 @@ pipeline {
     
     agent any
     
-    parameters {
-        string(defaultValue: '1.2.3.4.5', description: 'Deployed Link', name: 'deployedLink')
-    }
+ 
     
     stages {
         stage('Cloning from git') {
@@ -35,10 +33,9 @@ pipeline {
             steps {
                 script {
                       echo 'Deploying to production...'
-                      env.deployedLink = '3.7.253.96:81'
+                      def deployedLink = '3.7.253.96:81'
                       echo "deployedLink: ${env.deployedLink}"
-                      echo "pvalue: ${deployedLink}"
-                      echo "Current environment variables: ${env}" // Debug statement
+                      
   
                 }
             }
