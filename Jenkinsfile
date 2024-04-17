@@ -1,14 +1,14 @@
 pipeline {
       
     environment {
-        deployedLink = ''
+        deployedLink = '0.0.0'
     }
     
     agent any
     
-    parameters {
-        string(defaultValue: '', description: 'Deployed Link', name: 'deployedLink')
-    }
+    // parameters {
+    //     string(defaultValue: '', description: 'Deployed Link', name: 'deployedLink')
+    // }
     
     stages {
         stage('Cloning from git') {
