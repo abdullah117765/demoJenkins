@@ -1,7 +1,7 @@
 pipeline {
       
     environment {
-        deployedLink = '3.7.253.96:81'
+        deployedLink = ''
     }
     
     agent any
@@ -33,8 +33,7 @@ pipeline {
                 script {
                     if (env.BRANCH_NAME == 'main') {
                         echo 'Deploying to production...'
-                        def file = new File("${WORKSPACE}\\deployment_link.txt")
-                        file << env.deployedLink
+                        env.deployedLink = '3.7.253.96:81'
                         
                     } else {
                         echo 'Deploying to development server...'
