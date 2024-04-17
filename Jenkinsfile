@@ -34,7 +34,7 @@ pipeline {
                 script {
                       echo 'Deploying to production...'
                       def deployedLink = '3.7.253.96:81'
-                      echo "deployedLink: ${env.deployedLink}"
+                      echo "deployedLink: ${deployedLink}"
                       
   
                 }
