@@ -1,6 +1,8 @@
 pipeline {
-      
-    
+
+    environment {
+        deployedLink="0.0.0.0"
+    }
     
     agent any
     
